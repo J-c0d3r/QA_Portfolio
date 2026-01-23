@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+//https://www.globalsqa.com/angularjs-protractor-practice-site/
+
 describe('Criando cenário de teste para o site globalsqa', () => {
 
   it('Caso de teste: Registrando um usuário no site com sucesso', () => {
@@ -11,8 +13,8 @@ describe('Criando cenário de teste para o site globalsqa', () => {
     cy.get('#password').type('inatel');
     cy.get('.btn-primary').click();
     cy.get('.ng-binding').should('contain.text', 'Registration successful');
-
   })
+
 
   it('Caso de teste: Registrando um usuário com falha (faltando senha)', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
@@ -24,18 +26,17 @@ describe('Criando cenário de teste para o site globalsqa', () => {
     cy.get('.has-error > .help-block').should('have.text', 'Password is required');
     cy.get('.btn-primary').should('be.disabled');
     //cy.get('.btn-primary').click();
-
   })
 
-  it('Caso de teste: Realizando login com sucesso', () => {
 
+  it('Caso de teste: Realizando login com sucesso', () => {
     let info = criarUsuario();
     cy.get('#username').type(info[0]);
     cy.get('#password').type(info[1]);
     cy.get('.btn-primary').click();
     cy.get('h1.ng-binding').should('contain.text', info[0]);
-
   })
+
 
   it('Caso de teste: Deletando usuário com sucesso!', () => {
 
@@ -45,13 +46,11 @@ describe('Criando cenário de teste para o site globalsqa', () => {
     cy.get('.btn').click();
     cy.login(info[0], info[1]);
     cy.get('.ng-binding').should('have.text', 'Username or password is incorrect');
-
   })
-
 })
 
-function criarUsuario() {
 
+function criarUsuario() {
   let horas = new Date().getHours().toString();
   let minutos = new Date().getMinutes().toString();
   let seg = new Date().getSeconds().toString();
@@ -69,7 +68,4 @@ function criarUsuario() {
   cy.get('.ng-binding').should('contain.text', 'Registration successful');
 
   return userInfo;
-
 }
-
-

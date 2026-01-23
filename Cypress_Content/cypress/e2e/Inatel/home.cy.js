@@ -98,7 +98,7 @@ describe('Testando segundo layer da página', () => {
     });
 });
 
-describe.only('Testando resoluções diferentes', () => {
+describe('Testando resoluções diferentes', () => {
     beforeEach(() => {
         cy.visit("https://inatel.br")
         cy.get('#contactar').should('have.text', 'Conheça o Inatel')
