@@ -9,7 +9,7 @@ describe('Testando primeiro layer', () => {
         cy.viewport(1920, 1080)
     });
 
-    it('Verificando existência dos elementos na Barra de Menu', () => {
+    it('Cada elemento na Barra de Menu deve existir', () => {
         cy.get('.topic-nav > :nth-child(1) > [href="#"]').should('be.visible')
         cy.get('.topic-nav > :nth-child(1) > [href="#"]').should('have.text', 'Conheça o Inatel')
 
@@ -41,14 +41,14 @@ describe('Testando primeiro layer', () => {
         cy.get('#noticias-inatel').should('be.visible')
     });
 
-    it('Verificando o funcionamento do botão Conheça o Inatel', () => {
+    it('Botão Conheça o Inatel deve redirecionar para página Quem Somos', () => {
         cy.get('#contactar').click()
         cy.get('.flexBoxGeral > :nth-child(1) > .subtopic > .colorfff').should('have.text', 'Quem Somos')
         cy.get('.flexBoxGeral > :nth-child(1) > .subtopic > h2').should('have.text', 'Missão')
         cy.get('.SJ-MT-00 > .subtopic > h2').should('have.text', 'Visão')
     });
 
-    it('Verificando o funcionamento do botão Notícias', () => {
+    it('Botão Notícias deve redirecionar para página Notícias', () => {
         cy.get('#noticias-inatel').click()
         cy.url().should('include', '/noticias/')
         cy.get('.flexBoxGeral').should('be.visible').should('contain.text', "Destaque")
@@ -56,49 +56,44 @@ describe('Testando primeiro layer', () => {
 
 });
 
-describe('Testando layer Educação', () => {
+describe('Testando elementos do layer Educação', () => {
     beforeEach(() => {
         cy.visit("https://inatel.br")
     });
 
-    it('Titulo do layer', () => {
+    it('Deve conter o Titulo do layer', () => {
         cy.get('.wrapSobrepoeDestaque > .flexTS > h2').should('be.visible').should('contain.text', "Educação")
         cy.get('.wrapSobrepoeDestaque > .flexTS > .subtopic > h3').should('be.visible').should('contain.text', "Futuros líderes estão aqui, estude no Inatel!")
     });
 
-    it('Elementos bloco Graduação', () => {
-        //bloco Graduacao
+    it('Deve conter os elementos do bloco Graduação', () => {
         cy.get(':nth-child(1) > .boxLink > picture > img').should('be.visible')
         cy.get(':nth-child(1) > .boxLink > h4').should('have.text', 'Graduação')
         cy.get(':nth-child(1) > .boxLink > p').should('be.visible')
         cy.get(':nth-child(1) > .fixaBottom > .saibaMais').should('be.visible')
     });
-    it('Elementos bloco Especialização', () => {
-        //bloco Especialização
+    it('Deve conter os elementos do bloco Especialização', () => {
         cy.get(':nth-child(2) > .boxLink > picture > img').should('be.visible')
         cy.get(':nth-child(2) > .boxLink > h4').should('have.text', 'Especialização')
         cy.get(':nth-child(2) > .boxLink > p').should('be.visible')
         cy.get(':nth-child(2) > .fixaBottom > .saibaMais').should('be.visible')
     });
 
-    it('Elementos bloco Mestrado e Doutorado', () => {
-        //bloco Mestrado e Doutorado
+    it('Deve conter os elementos do bloco Mestrado e Doutorado', () => {
         cy.get(':nth-child(3) > .boxLink > picture > img').should('be.visible')
         cy.get(':nth-child(3) > .boxLink > h4').should('have.text', 'Mestrado e Doutorado')
         cy.get(':nth-child(3) > .boxLink > p').should('be.visible')
         cy.get(':nth-child(3) > .fixaBottom > .saibaMais').should('be.visible')
     });
 
-    it('Elementos bloco Inatel Online', () => {
-        //bloco Inatel Online
+    it('Deve conter os elementos do bloco Inatel Online', () => {
         cy.get(':nth-child(4) > .boxLink > picture > img').should('be.visible')
         cy.get(':nth-child(4) > .boxLink > h4').should('have.text', 'Inatel Online')
         cy.get(':nth-child(4) > .boxLink > p').should('be.visible')
         cy.get(':nth-child(4) > .fixaBottom > .saibaMais').should('be.visible')
     });
 
-    it('Elementos bloco Cursos de Extensão e Certificações', () => {
-        //bloco Cursos de Extensão e Certificações
+    it('Deve conter os elementos do bloco Cursos de Extensão e Certificações', () => {
         cy.get(':nth-child(5) > .boxLink > picture > img').should('be.visible')
         cy.get(':nth-child(5) > .boxLink > h4').should('have.text', 'Cursos de Extensão e Certificações')
         cy.get(':nth-child(5) > .boxLink > p').should('be.visible')
