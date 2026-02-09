@@ -15,26 +15,20 @@ function registerUser() {
   cy.get('.btn-primary').click();
 }
 
-describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
+describe('GlobalSQA – Register and Login Functional Tests', () => {
 
   beforeEach(() => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/');
   });
 
-  it('Verificando Botão Cancel retornar para página Login', () => {
-    cy.get('.btn-link').click()
-    cy.get('.btn-link').click()
-    cy.get('h2').should('contain.text', "Login")
-  });
-
-  it('Registrando um usuário com sucesso', () => {
+  it('Deve registrar um usuário com sucesso', () => {
     cy.get('.btn-link').click();
     registerUser();
     cy.get('.ng-binding').should('contain.text', 'Registration successful');
   })
 
 
-  it('Registrando um usuário e Logando ambos com sucesso', () => {
+  it('Deve registrar um usuário e realizar o login ambos com sucesso', () => {
     cy.get('.btn-link').click();
     registerUser();
     cy.get('.ng-binding').should('contain.text', 'Registration successful');
@@ -45,7 +39,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('div.ng-scope > :nth-child(2)').should('contain.text', "You're logged in!!")
   })
 
-  it('Deletando usuário com sucesso!', () => {
+  it('Deve deletar um usuário com sucesso!', () => {
     cy.get('.btn-link').click();
     registerUser();
     cy.get('.ng-binding').should('contain.text', 'Registration successful');
@@ -61,12 +55,12 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.ng-binding').should('have.text', 'Username or password is incorrect');
   })
 
-  it('Registrando um usuário como todos os campos em branco', () => {
+  it('Botão Register deve permanecer desabilitado quando todos os campos estiverem em branco', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário Campo First Name em Branco', () => {
+  it('Botão Register deve permanecer desabilitado quando o campo First Name estiver em Branco', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#Text1').type('inatel');
     cy.get('#username').type('inatel');
@@ -74,7 +68,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário Campo Last Name em Branco', () => {
+  it('Botão Register deve permanecer desabilitado quando o campo Last Name estiver em Branco', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#username').type('inatel');
@@ -82,7 +76,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário Campo Username em Branco', () => {
+  it('Botão Register deve permanecer desabilitado quando campo Username estiver em Branco', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#Text1').type('inatel');
@@ -90,7 +84,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário Campo Senha em Branco', () => {
+  it('Botão Register deve permanecer desabilitado quando campo Senha estiver em Branco', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#Text1').type('inatel');
@@ -99,7 +93,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
   })
 
 
-  it('Registrando um usuário. Campo First name Escreve, Apaga, Checa Error', () => {
+  it('Botão Register deve permanecer desabilitado após preencher e limpar o campo First Name', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#firstName').clear()
@@ -110,7 +104,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário. Campo Last name Escreve, Apaga, Checa Error', () => {
+  it('Botão Register deve permanecer desabilitado após preencher e limpar o campo Last Name', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#Text1').type('inatel');
@@ -121,7 +115,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário. Username Escreve, Apaga, Checa Error', () => {
+  it('Botão Register deve permanecer desabilitado após preencher e limpar o campo UserName', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#Text1').type('inatel');
@@ -132,7 +126,7 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.btn-primary').should('be.disabled');
   })
 
-  it('Registrando um usuário. Campo Senha Escreve, Apaga, Checa Error', () => {
+  it('Botão Register deve permanecer desabilitado após preencher e limpar o campo Password', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
     cy.get('#firstName').type('inatel');
     cy.get('#Text1').type('inatel');
@@ -142,11 +136,18 @@ describe('Testing GLOBALSQA - Register Login Example - Functionalities', () => {
     cy.get('.has-error > .help-block').should('have.text', 'Password is required');
     cy.get('.btn-primary').should('be.disabled');
   })
+
+  it('Botão Cancel deve retornar para a página de Login', () => {
+    cy.get('.btn-link').click()
+    cy.get('.btn-link').click()
+    cy.get('h2').should('contain.text', "Login")
+  });
+
 })
 
 
-describe('Testing GLOBALSQA - Register Login Example - Visual Elements', () => {
-  it('Checando existência dos elementos na página login', () => {
+describe('GlobalSQA – Register and Login Visual Tests', () => {
+  it('Deve conter os elementos Titulo, Username, Password, Rodape', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/');
 
     cy.get('h2').should('exist')
@@ -162,7 +163,7 @@ describe('Testing GLOBALSQA - Register Login Example - Visual Elements', () => {
 
   });
 
-  it('Checando existência dos elementos na página register', () => {
+  it('Deve conter os elementos Titulo, First name, Last name, Username, Password, Rodape', () => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');
 
     cy.get('h2').should('exist')
