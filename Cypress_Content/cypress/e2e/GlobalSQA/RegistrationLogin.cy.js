@@ -139,6 +139,7 @@ describe('GlobalSQA – Register and Login Functional Tests', () => {
 
   it('Botão Cancel deve retornar para a página de Login', () => {
     cy.get('.btn-link').click()
+    cy.wait(150)
     cy.get('.btn-link').click()
     cy.get('h2').should('contain.text', "Login")
   });
