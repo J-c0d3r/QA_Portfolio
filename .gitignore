@@ -109,7 +109,7 @@ desktop.ini
 ####################################
 # NODE / JS
 ####################################
-package-lock.json
+#package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
