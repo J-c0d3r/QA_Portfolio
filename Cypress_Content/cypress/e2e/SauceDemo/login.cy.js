@@ -1,61 +1,61 @@
 /// <reference types="Cypress"/>
 
-describe('Testes de Funcionalidades do Login', () => {
+describe('Login – Functional Tests', () => {
 
     beforeEach(() => {
         cy.visit("https://www.saucedemo.com")
     });
 
-    it('Saber se está no site correto', () => {        
+    it('Deve estar no site correto', () => {        
         cy.url().should('eq', 'https://www.saucedemo.com/')
         cy.title().should('eq', 'Swag Labs')
     });
 
     it('Deve realizar o login com sucesso', () => {
-        cy.login_teste('standard_user', 'secret_sauce')
+        cy.login_saucedemo('standard_user', 'secret_sauce')        
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
-    it('Validar Login Incorreto', () => {
-        cy.login_teste('incorreto', 'secret_sauce')
+    it('Deve validar User Incorreto', () => {
+        cy.login_saucedemo('incorreto', 'secret_sauce')
         cy.get('[data-test="error"]').should('contain', 'Epic sadface: Username and password do not match any user in this service')
     });
 
-    it('Validar Senha Incorreta', () => {
-        cy.login_teste('standard_user', 'incorreto')
+    it('Deve validar Senha Incorreta', () => {
+        cy.login_saucedemo('standard_user', 'incorreto')
         cy.get('[data-test="error"]').should('contain', 'Epic sadface: Username and password do not match any user in this service')
     });
 
 
-    it('Login Invalido: Username e Senha em Branco', () => {
+    it('Deve validar Login Invalido: Username e Senha em Branco', () => {
         cy.get('[data-test="username"]').should('contain', '')
         cy.get('[data-test="password"]').should('contain', '')
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required')
     });
 
-    it('Login Invalido: User Invalido e Senha em Branco', () => {
+    it('Deve validar Login Invalido: User Invalido e Senha em Branco', () => {
         cy.get('[data-test="username"]').type('aaa')
         cy.get('[data-test="password"]').should('contain', '')
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Password is required')
     });
 
-    it('Login Invalido: User em Branco e Senha Invalida', () => {
+    it('Deve validar Login Invalido: User em Branco e Senha Invalida', () => {
         cy.get('[data-test="username"]').should('contain', '')
         cy.get('[data-test="password"]').type('aaa')
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required')
     });
 
-    it('Login Invalido: User Válido e Senha Invalida', () => {
+    it('Deve validar Login Invalido: User Válido e Senha Invalida', () => {
         cy.get('[data-test="username"]').type('standard_user')
         cy.get('[data-test="password"]').type('aaa')
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     });
 
-    it('Login Invalido: User Invalido e Senha Valida', () => {
+    it('Deve validar Login Invalido: User Invalido e Senha Valida', () => {
         cy.get('[data-test="username"]').type('aaa')
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click();
@@ -63,59 +63,59 @@ describe('Testes de Funcionalidades do Login', () => {
     });
 
     it('Deve autenticar corretamente com o 1º username', () => {
-        cy.login_teste('standard_user', 'secret_sauce')
+        cy.login_saucedemo('standard_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
     it('Deve mostrar a mensagem de erro corretamente com o 2º username', () => {
-        cy.login_teste('locked_out_user', 'secret_sauce')
+        cy.login_saucedemo('locked_out_user', 'secret_sauce')
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
     });
 
     it('Deve autenticar corretamente com o 3º username', () => {
-        cy.login_teste('problem_user', 'secret_sauce')
+        cy.login_saucedemo('problem_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
     it('Deve autenticar corretamente com o 4º username', () => {
-        cy.login_teste('performance_glitch_user', 'secret_sauce')
+        cy.login_saucedemo('performance_glitch_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
     it('Deve autenticar corretamente com o 5º username', () => {
-        cy.login_teste('error_user', 'secret_sauce')
+        cy.login_saucedemo('error_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
     it('Deve autenticar corretamente com o 6º username', () => {
-        cy.login_teste('visual_user', 'secret_sauce')
+        cy.login_saucedemo('visual_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
     });
 
-    it('User e Senha Alternados', () => {
-        cy.login_teste('secret_sauce', 'standard_user')
+    it('Deve validar erro com User e Senha Alternados', () => {
+        cy.login_saucedemo('secret_sauce', 'standard_user')
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     });
 
 
-    it('User e Senha com 20 9', () => {
-        cy.login_teste('99999999999999999999', '99999999999999999999')
+    it('Deve validar erro com User e Senha com 20 9', () => {
+        cy.login_saucedemo('99999999999999999999', '99999999999999999999')
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     });
 
-    it('User e Senha com 50 9', () => {
-        cy.login_teste('99999999999999999999999999999999999999999999999999', '99999999999999999999999999999999999999999999999999')
+    it('Deve validar erro com User e Senha com 50 9', () => {
+        cy.login_saucedemo('99999999999999999999999999999999999999999999999999', '99999999999999999999999999999999999999999999999999')
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     });
 
-    it('User e Senha com 100 9', () => {
-        cy.login_teste('999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999', '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999')
+    it('Deve validar erro com User e Senha com 100 9', () => {
+        cy.login_saucedemo('999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999', '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999')
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username and password do not match any user in this service')
     });
 
     it('Deve retornar para a tela de login ao realizar o LogOut', () => {
         //login
-        cy.login_teste('standard_user', 'secret_sauce')
+        cy.login_saucedemo('standard_user', 'secret_sauce')
         cy.get('[data-test="title"]').should('contain', 'Products')
 
         //logout

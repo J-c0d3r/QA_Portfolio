@@ -1,37 +1,127 @@
-# Dependency directories
+####################################
+# DEPENDÊNCIAS E BUILDS
+####################################
 node_modules/
-videos/
-reports/
+.npm/
+.pnpm-store/
+.yarn/
+yarn-error.log
+
 target/
-screenshots/
 build/
+dist/
+out/
+bin/
 
-# Optional npm cache directory
-.npm
+####################################
+# CYPRESS
+####################################
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/results/
+cypress/reports/
 
-# dotenv environment variables file
-.env
+####################################
+# PLAYWRIGHT
+####################################
+playwright-report/
+test-results/
+blob-report/
+.trace/
 
-# Compiled class file
-*.class
+####################################
+# SELENIUM / APPIUM
+####################################
+selenium-logs/
+appium-logs/
+appium.log
 
-# Log files
+####################################
+# ROBOT FRAMEWORK
+####################################
+output.xml
+log.html
+report.html
+robot_results/
+
+####################################
+# KARATE API
+####################################
+karate-reports/
+karate.log
+
+####################################
+# POSTMAN / API
+####################################
+postman/
+.newman/
+newman/
+newman-reports/
+
+####################################
+# LOGS
+####################################
 *.log
+logs/
 
+####################################
+# AMBIENTE / SEGREDOS
+####################################
+.env
+.env.*
+*.pem
+*.key
+*.crt
+secrets.*
+credentials.*
+
+####################################
 # IDEs
+####################################
 .idea/
 *.iml
+.vscode/
 *.swp
 *.swo
-.vscode
 
-# Outros arquivos temporários
+####################################
+# SISTEMA OPERACIONAL
+####################################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+####################################
+# TEMPORÁRIOS
+####################################
 *.tmp
+*.temp
+*.cache
 
-# Outros arquivos
+####################################
+# ARQUIVOS DE TESTE LOCAIS
+####################################
+*.xlsx
+*.csv
+*.json.bak
+
+####################################
+# NODE / JS
+####################################
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-1-getting-started
+####################################
+# OUTROS
+####################################
+coverage/
+reports/
+videos/
+screenshots/
+
+1-getting-started 
 2-advanced-examples
 
 *.xlsx

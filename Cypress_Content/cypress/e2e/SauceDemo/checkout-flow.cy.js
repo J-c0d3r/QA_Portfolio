@@ -1,10 +1,15 @@
 /// <reference types="Cypress"/>
 
-describe('Teste E2E - Realizando a compra de produtos com sucesso', () => {
-    it('Fluxo da Compra de Produtos', () => {
-        cy.login_teste('standard_user','secret_sauce')
+describe('Teste E2E', () => {
+
+    beforeEach(() => {
+        cy.visit("https://www.saucedemo.com/")
+        cy.login_saucedemo('standard_user', 'secret_sauce')
+    });
+
+    it('Deve realizar a compra de produtos com sucesso', () => {
         cy.get('[data-test="title"]').should('contain', 'Products')
-        
+
         // Ordenação de produtos de menor para maior valor
         cy.get('[data-test="product-sort-container"]').select('Price (low to high)')
         //Valida se foi ordenado
@@ -49,10 +54,15 @@ describe('Teste E2E - Realizando a compra de produtos com sucesso', () => {
     });
 });
 
-describe.only('Testes variados', () => {
-    it('Teste com o carrinho vazio', () => {
-        //login
-        cy.login_teste('standard_user','secret_sauce')
+describe('Testes variados', () => {
+
+    beforeEach(() => {
+        cy.visit("https://www.saucedemo.com/")
+        cy.login_saucedemo('standard_user', 'secret_sauce')
+    });
+
+    it('Deve completar o pedido com o carrinho vazio', () => {
+        //login        
         cy.get('[data-test="title"]').should('contain', 'Products')
 
         cy.get('[data-test="shopping-cart-link"]').click()
@@ -69,26 +79,24 @@ describe.only('Testes variados', () => {
         cy.get('[data-test="finish"]').click()
 
         //Confirma tela final
+        cy.get('[data-test="title"]').should('have.text', 'Checkout: Complete!')
         cy.get('[data-test="complete-header"]').should('have.text', 'Thank you for your order!')
     });
 
-    it('Teste todas as informações no checkout em branco', () => {
-        //login
-        cy.login_teste('standard_user','secret_sauce')
+    it('Deve mostrar uma mensagem de erro na tela do Checkout após deixar todas as informações em branco', () => {
+        //login        
         cy.get('[data-test="title"]').should('contain', 'Products')
 
         cy.get('[data-test="shopping-cart-link"]').click()
         cy.get('[data-test="checkout"]').click()
 
         //CheckoutInformation
-        cy.get('[data-test="firstName"]').should('contain','')
-        cy.get('[data-test="lastName"]').should('contain','')
-        cy.get('[data-test="postalCode"]').should('contain','')
+        cy.get('[data-test="firstName"]').should('contain', '')
+        cy.get('[data-test="lastName"]').should('contain', '')
+        cy.get('[data-test="postalCode"]').should('contain', '')
         cy.get('[data-test="continue"]').click()
 
         //checagem
         cy.get('[data-test="error"]').should('have.text', 'Error: First Name is required')
     });
-
-    
 });

@@ -104,4 +104,13 @@ import 'cypress-mochawesome-reporter/register';
 
 Após a execução, o **relatório HTML** será gerado automaticamente na pasta de reports configurada.
 
+### 5️⃣ Adicionar video no relatório 
+Escreva isto dentro de e2e:{} no arquivo cypress/support/e2e.js
+```bash
+    chromeWebSecurity: false,
+    video: true,
+    videoCompression: 32,
+    videoUploadOnPasses: true,
+```
+
 ---

@@ -4,7 +4,8 @@ describe('Checking elements on Home page', () => {
 
     describe('Checking main elements', () => {
         beforeEach(() => {
-            cy.login_teste('standard_user', 'secret_sauce')
+            cy.visit("https://www.saucedemo.com/")
+            cy.login_saucedemo('standard_user', 'secret_sauce')
         });
 
         it('Deve conter o elemento Titulo e Subtitulo visivel', () => {
@@ -24,7 +25,7 @@ describe('Checking elements on Home page', () => {
             cy.get('.bm-burger-button').should('be.visible').should('exist')
         });
 
-        it('Deve conter All Items, About, Logou, Reset App State ao clicar no Hamburguer Menu', () => {
+        it('Deve conter All Items, About, Logout, Reset App State ao clicar no Hamburguer Menu', () => {
             cy.get('.bm-burger-button').click()
             cy.get('[data-test="inventory-sidebar-link"]').should('contain.text', "All Items")
             cy.get('[data-test="about-sidebar-link"]').should('contain.text', "About")
@@ -37,36 +38,36 @@ describe('Checking elements on Home page', () => {
         });
     });
 
-    /* 
+
     describe('Checking items card elements', () => {
 
         beforeEach(() => {
-            cy.login_teste('standard_user', 'secret_sauce')
+            cy.visit("https://www.saucedemo.com/")
+            cy.login_saucedemo('standard_user', 'secret_sauce')
         });
 
-        it('teste04C', () => {
-            // cy.get('[data-test="inventory-container"]').should('have.length.greaterThan', 0) 
+        it('Deve mostrar pelo menos um card de produto', () => {
+            cy.get('.inventory_item').should('have.length.greaterThan', 1).and('be.visible')
+        });
+
+        it('Cada elemento do card deve existir e estar visivel', () => {
             cy.get('.inventory_item').first().within(() => {
-                cy.get('.inventory_item_img').should('exist')
-                cy.get('.inventory_item_name').should('exist')
-                cy.get('.inventory_item_desc').should('exist')
-                cy.get('.inventory_item_price').should('exist')
-                cy.contains(/add to cart/i).should('exist')
+                cy.get('.inventory_item_img').should('exist').and('be.visible')
+                cy.get('.inventory_item_name').should('exist').and('be.visible')
+                cy.get('.inventory_item_desc').should('exist').and('be.visible')
+                cy.get('.inventory_item_price').should('exist').and('be.visible')
+                cy.contains(/add to cart/i).should('exist').and('be.visible')
             })
 
         });
     });
 
-     */
-
-
-
-
 
     describe('Checking elements on footer', () => {
 
         beforeEach(() => {
-            cy.login_teste('standard_user', 'secret_sauce')
+            cy.visit("https://www.saucedemo.com/")
+            cy.login_saucedemo('standard_user', 'secret_sauce')
         });
 
         it('Deve exibir botão do Twitter com link valido', () => {
@@ -86,5 +87,3 @@ describe('Checking elements on Home page', () => {
         });
     });
 });
-
-

@@ -24,6 +24,22 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add('login_saucedemo', (user, password) => {
+    /* cy.visit("https://www.saucedemo.com/") */
+    cy.get('[data-test="username"]').type(user)
+    cy.get('[data-test="password"]').type(password)
+    cy.get('[data-test="login-button"]').click();
+})
+
+Cypress.Commands.add('verificaProdutos', () => {
+    cy.get('[data-test="cart-list"] > :nth-child(3)').should('contain', 'Sauce Labs Onesie')
+    cy.get('[data-test="cart-list"] > :nth-child(4)').should('contain', 'Sauce Labs Bike Light')
+    cy.get('[data-test="cart-list"] > :nth-child(5)').should('contain', 'Sauce Labs Bolt T-Shirt')
+})
+
+
+
+// Verificar se pode remover isto
 Cypress.Commands.add('login', (username, senha) => {
     cy.get('#username').type(username);
     cy.get('#password').type(senha);
