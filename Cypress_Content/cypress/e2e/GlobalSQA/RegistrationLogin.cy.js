@@ -19,6 +19,7 @@ describe('GlobalSQA – Register and Login Functional Tests', () => {
 
   beforeEach(() => {
     cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/');
+    cy.wait(100);
   });
 
   it('Deve registrar um usuário com sucesso', () => {
