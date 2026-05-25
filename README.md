@@ -15,17 +15,20 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 ## Tools & Technologies
 
 ### 🧪 Test Automation
-- Cypress
-- Karate DSL
-- Postman
-- Playwright — **Coming Soon**
-- Selenium — **Coming Soon**
+- Cypress <img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" />
+          
+- Karate DSL<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/karatelabs/karatelabs-original.svg" />
+- Postman<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+
+- Playwright<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" /> — **Coming Soon**
+- Selenium<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" /> — **Coming Soon**
 - Robot Framework — **Coming Soon**
 - Appium — **Coming Soon**
 
 ### 🤖 CI/CD
-- GitHub Actions
-- Jenkins — **Coming Soon**
+- GitHub Actions<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />
+          
+- Jenkins<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" /> — **Coming Soon**
 
 ---
 
