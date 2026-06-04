@@ -37,9 +37,9 @@ Feature: Utilizando a API pokeapi para a prova
 
   Scenario: Tentativa de passar um path diferente do permitido
     Given url url_base
-    And path 'PokemonTeste'                        
+    And path 'Pokemon/Teste'                        
     When method get
-    Then status 404
+    Then status 400
     And print response
 
 

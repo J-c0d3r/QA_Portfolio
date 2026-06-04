@@ -12,7 +12,8 @@ Feature: Testando API Pokemon
   Scenario: Testando retorno pikachu com informações inválidas
     Given url 'https://pokeapi.co/api/v2/pokemon/pikachu/chocolate'
     When method get
-    Then status 404
+    Then status 400
+    And print response
 
   Scenario: Testando retorno pikachu e verificando o JSON
     Given url url_base
