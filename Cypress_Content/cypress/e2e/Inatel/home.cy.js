@@ -104,11 +104,11 @@ describe('Testando elementos do layer Educação', () => {
 
 describe('Testando Footer', () => {
 
-    beforeEach(() => {
+   /*  beforeEach(() => {
         cy.visit("https://inatel.br")
         cy.get('[id*="cookie"], [class*="cookie"]').invoke('remove')
         cy.scrollTo("bottom")
-    });
+    }); */
 
     runFooter();
 });

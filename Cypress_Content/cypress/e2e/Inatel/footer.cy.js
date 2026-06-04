@@ -3,15 +3,15 @@
 export function runFooter() {
     describe('Checando elementos do Rodape', () => {
 
-        /* beforeEach(() => {
+        beforeEach(() => {
             cy.visit("https://inatel.br")
             cy.get('[id*="cookie"], [class*="cookie"]').invoke('remove')
             cy.scrollTo("bottom")
-        }); */
+        });
 
         it('Deve conter Informações de endereço e contato', () => {
             cy.get('.logoRodape > h2').should('exist')
-            cy.get('.mt15-1920').should('contain.text', "Instituto Nacional de Telecomunicações – Inatel")
+            cy.get('.logoRodape > :nth-child(2)').should('contain.text', "Instituto Nacional de Telecomunicações – Inatel")
             cy.get('.logoRodape > :nth-child(3)').should('contain.text', "Campus em Santa Rita do Sapucaí - MG - Brasil")
             cy.get('.logoRodape > :nth-child(4)').should('contain.text', "Av. João de Camargo, 510 - Centro - 37536-001")
             cy.get('.logoRodape > :nth-child(5)').should('contain.text', "Telefone")

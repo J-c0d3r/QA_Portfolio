@@ -10,7 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "cypress": "^13.17.0",
-    "cypress-mochawesome-reporter": "^3.2.3"
+    "cypress": "^15.16.0",
+    "cypress-mochawesome-reporter": "^3.8.4"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
   }
 }
