@@ -15,20 +15,20 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 ## Tools & Technologies
 
 ### 🧪 Test Automation
-- Cypress <img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" />
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg"/>Cypress
           
-- Karate DSL<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/karatelabs/karatelabs-original.svg" />
-- Postman<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/karatelabs/karatelabs-original.svg"/>Karate DSL
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"/>Postman
 
-- Playwright<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" /> — **Coming Soon**
-- Selenium<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" /> — **Coming Soon**
-- Robot Framework — **Coming Soon**
-- Appium — **Coming Soon**
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"/>Playwright — **Coming Soon**
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg"/>Selenium — **Coming Soon**
+- <img height="20px" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Robot-framework-logo.png"/>Robot Framework — **Coming Soon**
+- <img height="20px" src=""/>Appium — **Coming Soon**
 
 ### 🤖 CI/CD
-- GitHub Actions<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />GitHub Actions
           
-- Jenkins<img height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" /> — **Coming Soon**
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />Jenkins — **Coming Soon**
 
 ---
 
