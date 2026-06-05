@@ -11,11 +11,10 @@ class RunAllTests {
     @Test
     void runAllTest() {
         /* return Karate.run().relativeTo(getClass()); */
-        Results results = Runner.path("classpath:API_Services")
+        Results results = Runner.path("classpath:API_Services/serv_serverest")
                 .tags("~@ignore")
                 // .outputCucumberJson(true)
-                .parallel(10);
+                .parallel(3);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
-
 }

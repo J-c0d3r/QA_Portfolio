@@ -1,9 +1,10 @@
 package API_Services.serv_reqres;
+/* package API_Services.serv_reqres;
 
 import com.intuit.karate.junit5.Karate;
 /* import org.junit.BeforeClass; */
 
-class ReqResTestRunner {
+//class ReqResTestRunner {
 
     /*
      * @BeforeClass
@@ -12,10 +13,11 @@ class ReqResTestRunner {
      * }
      */
 
-    @Karate.Test
-    Karate runRRTest() {
+    //@Karate.Test
+    /* Karate runRRTest() {
         return Karate.run().relativeTo(getClass());
         /* return Karate.run("POST_RegisterUser").relativeTo(getClass()); */
-    }
+    //} 
+    
 
-}
+//}

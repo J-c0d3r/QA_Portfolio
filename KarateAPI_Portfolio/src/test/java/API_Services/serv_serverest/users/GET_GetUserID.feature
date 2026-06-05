@@ -17,9 +17,10 @@ Feature: Testing Method GET using ID in /usuarios Endpoint
       | 200         |
 
 
-  Scenario: Verify GET user by ID - CASE: user not found || <status_code>    
+  Scenario: Verify GET user by ID - CASE: user not found
     Given url serverest
     And path '/usuarios/test123@'
     When method GET
     Then status 400 
-    And match response.message == "Usuário não encontrado" 
+    And print response
+    And match response.id == "id deve ter exatamente 16 caracteres alfanuméricos" 

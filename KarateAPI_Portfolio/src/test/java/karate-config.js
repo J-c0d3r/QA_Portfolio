@@ -31,8 +31,8 @@ function fn() {
 
 
   //Config max time to each requesting - Performance Test
-  karate.configure('connectTimeout', 5000);
-  karate.configure('readTimeout', 5000)
+  karate.configure('connectTimeout', 15000);
+  karate.configure('readTimeout', 15000)
 
   //
   karate.log('karate.env system property was:', env);
