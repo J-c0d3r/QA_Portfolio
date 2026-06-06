@@ -13,10 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        folder:
-          - GlobalSQA
-          - Inatel
-          - SauceDemo
+        containers: [1, 2, 3]
 
     steps:
       - uses: actions/checkout@v4
@@ -32,20 +29,23 @@ jobs:
         working-directory: ./Cypress_Content
         run: npm ci
 
-      - name: Execute tests - ${{ matrix.folder }}
+      - name: Execute Cypress tests
         working-directory: ./Cypress_Content
-        run: npx cypress run --spec "cypress/e2e/${{ matrix.folder }}/**"
+        run: npx cypress run
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
 
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-${{ matrix.folder }}
+          name: cypress-screenshots-${{ matrix.containers }}
           path: ./Cypress_Content/cypress/screenshots
           if-no-files-found: ignore
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: cypress-videos-${{ matrix.folder }}
+          name: cypress-videos-${{ matrix.containers }}
           path: ./Cypress_Content/cypress/videos
           if-no-files-found: ignore
