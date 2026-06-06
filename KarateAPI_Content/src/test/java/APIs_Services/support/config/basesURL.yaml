@@ -1,0 +1,13 @@
+---
+dev:
+  env: dev
+  name_url: ''
+qa:
+  #baseUrl: https://reqres.in/api
+  env: qa
+  myGlobalVarName: SomeGlobalValue
+  reqres: https://reqres.in/api
+  serverest: https://serverest.dev
+uat:
+  env: uat
+  name_url: ''
