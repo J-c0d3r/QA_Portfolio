@@ -41,7 +41,7 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 
 ### 🔌 API Services
 - Serverest
-- Reqres
+- Reqres (archived)
 - Rick and Morty API
 - PokeAPI
 - SWAPI
