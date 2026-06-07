@@ -15,7 +15,7 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 ## Tools & Technologies
 
 ### 🧪 Test Automation
-- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg"/>Cypress
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg"/>Cypress || +cypress-split -> optimization
           
 - <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/karatelabs/karatelabs-original.svg"/>Karate DSL
 - <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"/>Postman
@@ -35,17 +35,17 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 ## Applications & APIs Tested
 
 ### 🌐 E2E Applications
-- SauceDemo
 - Inatel Home
 - GlobalSQA Login Example
+- SauceDemo
 
 ### 🔌 API Services
-- Serverest
+- JsonPlaceholder
+- PokeAPI
 - Reqres (archived)
 - Rick and Morty API
-- PokeAPI
+- Serverest
 - SWAPI
-- JsonPlaceholder
 
 ---
 
