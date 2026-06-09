@@ -25,7 +25,21 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
+  timeout: 30000,
+
+  expect: {
+    timeout: 1000, //5000 default
+  },
+
   use: {
+    //timeout - tempo maximo do teste inteiro
+    //expect.timeout - tempo de espera das assertions
+    //actionTimeout - Click, fill, check, etc...
+    //navigationTimeout - goto(), navegações e carregamentos
+    actionTimeout: 10000,
+    navigationTimeout: 30000,
+
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
