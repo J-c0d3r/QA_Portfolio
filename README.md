@@ -3,6 +3,7 @@
 [![CypressCI](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/cypress_CI.yml/badge.svg)](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/cypress_CI.yml)
 [![KarateCI](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/karate_CI.yml/badge.svg)](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/karate_CI.yml)
 [![PostmanCI](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/postman_CI.yml/badge.svg)](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/postman_CI.yml)
+[![PlaywrightCI](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/playwright_CI.yml/badge.svg)](https://github.com/J-c0d3r/QA_Portfolio/actions/workflows/playwright_CI.yml)
 
 ---
 
@@ -20,7 +21,7 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 - <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/karatelabs/karatelabs-original.svg"/>Karate DSL
 - <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"/>Postman
 
-- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"/>Playwright — **Coming Soon**
+- <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"/>Playwright
 - <img height="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg"/>Selenium — **Coming Soon**
 - <img height="20px" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Robot-framework-logo.png"/>Robot Framework — **Coming Soon**
 - Appium — **Coming Soon**
@@ -35,9 +36,10 @@ QA automation portfolio showcasing practical experience with E2E, API and CI/CD 
 ## Applications & APIs Tested
 
 ### 🌐 E2E Applications
-- Inatel Home
 - GlobalSQA Login Example
+- Inatel Home
 - SauceDemo
+- TheKitchen
 
 ### 🔌 API Services
 - JsonPlaceholder
@@ -59,7 +61,8 @@ QA_Repository/
 │
 ├── Cypress_Content/
 ├── KarateAPI_Content/
-├── Postman_Content/
+├── Playwright/
+├── Postman/
 │
 └── README.md
 ```
