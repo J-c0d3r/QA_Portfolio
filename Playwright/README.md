@@ -1,31 +1,121 @@
+# 🎭 Playwright
 
-to init playwright
+End-to-end test automation project built with Playwright.
+
+---
+
+## 🚀 Main Technologies
+
+- Playwright
+- JavaScript
+- GitHub Actions
+
+---
+
+## 📋 Prerequisites
+
+Install:
+
+- Node.js
+- NPM
+
+Verify the installation:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## ⚙️ Create a New Playwright Project
+
+```bash
 npm init playwright@latest
+```
 
+---
 
-npx playwright test --workers 3
-npx playwright test ./tests/example.spec.js
-npx playwright test --ui
-npx playwright codegen www.link.com
+## ▶️ Run Tests
 
+### Run all tests
+
+```bash
 npx playwright test
-    Runs the end-to-end tests.
+```
 
-  npx playwright test --ui
-    Starts the interactive UI mode.
+### Run a specific test file
 
-  npx playwright test --project=chromium
-    Runs the tests only on Desktop Chrome.
+```bash
+npx playwright test ./tests/example.spec.js
+```
 
-  npx playwright test example
-    Runs the tests in a specific file.
+### Run tests in parallel
 
-  npx playwright test --debug
-    Runs the tests in debug mode.
+```bash
+npx playwright test --workers=3
+```
 
-  npx playwright codegen
-    Auto generate tests with Codegen.
+### Run tests only in Chromium
 
-We suggest that you begin by typing:
+```bash
+npx playwright test --project=chromium
+```
 
-    npx playwright test
+---
+
+## 🖥️ Playwright UI Mode
+
+Launch the interactive test runner:
+
+```bash
+npx playwright test --ui
+```
+
+---
+
+## 🐞 Debug Mode
+
+Run tests with the Playwright debugger:
+
+```bash
+npx playwright test --debug
+```
+
+---
+
+## 🤖 Code Generator
+
+Generate test code automatically while interacting with a website:
+
+```bash
+npx playwright codegen https://www.example.com
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+Playwright/
+│
+├── tests/
+│   └── *.spec.js
+│
+├── playwright.config.js
+├── package.json
+└── README.md
+```
+
+---
+
+## 💡 Useful Commands
+
+```bash
+npx playwright test
+npx playwright test --ui
+npx playwright test --debug
+npx playwright test --project=chromium
+npx playwright test --workers=3
+npx playwright codegen https://www.example.com
+```
