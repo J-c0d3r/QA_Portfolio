@@ -1,5 +1,7 @@
 import test, { page, expect } from '@playwright/test'
 
+test.skip(process.env.CI, 'Blocked by Vercel on GitHub Actions');
+
 test('The Kitchen Tests', async ({ page }) => {
 
     await page.goto('https://kitchen.applitools.com/')

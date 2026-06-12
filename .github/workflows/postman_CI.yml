@@ -3,8 +3,15 @@ name: PostmanCI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'Postman/**'
+      - '.github/workflows/postman_CI.yml'
+
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'Postman/**'
+      - '.github/workflows/postman_CI.yml'
 
 jobs:
   tests_postmanAPI:

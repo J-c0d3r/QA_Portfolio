@@ -3,8 +3,15 @@ name: CypressCI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'Cypress_Content/**'
+      - '.github/workflows/cypress_CI.yml'
+
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'Cypress_Content/**'
+      - '.github/workflows/cypress_CI.yml'
 
 jobs:
   tests_cypressGUI:

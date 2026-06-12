@@ -3,8 +3,15 @@ name: KarateCI
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'KarateAPI_Content/**'
+      - '.github/workflows/karate_CI.yml'
+
   pull_request:
     branches: [ main ]
+    paths:
+      - 'KarateAPI_Content/**'
+      - '.github/workflows/karate_CI.yml'
 
 jobs:
 
